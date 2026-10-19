@@ -1,7 +1,7 @@
 <!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>SocialExpand · Social-Media-Agentur für lokale Unternehmen</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="SocialExpand macht Unternehmen am Hochrhein zu den bekanntesten ihrer Branche: Reels, TikToks, Dreh, Schnitt, Posting und Werbeanzeigen, komplett für dich erledigt.">
+<meta name="description" content="SocialExpand macht Unternehmen am Hochrhein zur Nummer 1 in ihrer Region und Branche: Reels, TikToks, Dreh, Schnitt, Posting und Werbeanzeigen, komplett für dich erledigt.">
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
 /* Layout: helle, pastellige Bühne; Hochformat-Reels als wiederkehrendes Motiv, Logo-Verlauf nur für Handlungen */
@@ -67,7 +67,7 @@ p{margin:0}
 .hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:70vw;height:70vw;max-width:900px;max-height:900px;background:radial-gradient(closest-side,var(--rosa),transparent 70%);z-index:-1}
 .hero::after{content:"";position:absolute;left:-15%;bottom:-30%;width:60vw;height:60vw;max-width:760px;max-height:760px;background:radial-gradient(closest-side,var(--himmel),transparent 70%);z-index:-1}
 .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
-.hero h1{font-size:clamp(40px,5.8vw,76px);font-weight:800;margin-top:18px}
+.hero h1{font-size:clamp(34px,4.7vw,62px);font-weight:800;margin-top:18px}
 .hero h1 .bunt{background:var(--verlauf);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero h1 .ort{font-weight:400;font-style:normal;position:relative;white-space:nowrap}
 .hero h1 .ort::after{content:"";position:absolute;left:0;right:0;bottom:.04em;height:.16em;background:var(--pfirsich);z-index:-1;border-radius:4px}
@@ -147,14 +147,17 @@ p{margin:0}
 /* Laufband Kunden */
 .band{border-block:1px solid var(--line);background:var(--karte);overflow:hidden;padding-block:22px 26px;display:flex;flex-direction:column;gap:16px}
 .band-titel{text-align:center;font:500 12px var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin:0;padding-inline:16px}
-.band-fenster{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.band .spur{display:flex;gap:18px;width:max-content;animation:band 40s linear infinite;padding-inline:9px}
+.band-fenster{overflow:hidden;position:relative}
+.band-fenster::before,.band-fenster::after{content:"";position:absolute;top:0;bottom:0;width:8%;z-index:1;pointer-events:none}
+.band-fenster::before{left:0;background:linear-gradient(90deg,var(--karte),transparent)}
+.band-fenster::after{right:0;background:linear-gradient(270deg,var(--karte),transparent)}
+.band .spur{display:flex;gap:18px;width:max-content;animation:band 40s linear infinite;padding-inline:9px;will-change:transform;-webkit-backface-visibility:hidden;backface-visibility:hidden}
 .logo-kachel{flex:none;position:relative;width:184px;height:104px;border-radius:20px;background:#fff;border:1px solid var(--line);box-shadow:0 6px 18px -12px rgba(36,20,47,.25);transition:transform .25s}
 .logo-kachel:hover{transform:translateY(-3px)}
 .logo-kachel img{position:absolute;inset:12px 14px;width:calc(100% - 28px);height:calc(100% - 24px);max-width:none;object-fit:contain;display:block}
 @media (max-width:640px){.logo-kachel{width:144px;height:84px;border-radius:16px}.logo-kachel img{inset:10px 12px;width:calc(100% - 24px);height:calc(100% - 20px)}.band .spur{gap:12px;padding-inline:6px}}
 @media (prefers-reduced-motion:reduce){.band .spur{animation:none;flex-wrap:wrap;width:auto;justify-content:center}.logo-kachel.kopie{display:none}}
-@keyframes band{to{transform:translateX(-50%)}}
+@keyframes band{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
 
 /* Abschnitte */
 .abschnitt{padding-block:clamp(72px,10vw,128px)}
@@ -539,7 +542,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 .intro{position:fixed;inset:0;z-index:200;pointer-events:none;overflow:hidden}
 .intro-grund{position:absolute;inset:0;background:radial-gradient(60% 60% at 50% 55%,#FFFFFF 0%,var(--bg) 70%);transition:opacity .8s ease}
 .intro.offen .intro-grund{opacity:0}
-.intro-rakete{position:absolute;left:0;top:0;width:min(42vw,360px);aspect-ratio:160/250;will-change:transform;filter:drop-shadow(0 18px 30px rgba(194,49,143,.35))}
+.intro-rakete{position:absolute;left:0;top:0;transform:translate(-200vw,200vh);width:min(42vw,360px);aspect-ratio:160/250;will-change:transform;filter:drop-shadow(0 18px 30px rgba(194,49,143,.35))}
 .intro-rakete svg{width:100%;height:100%;display:block;overflow:visible}
 .intro-flamme{transform-origin:0 50px;animation:flackern .09s ease-in-out infinite alternate}
 @keyframes flackern{from{transform:scaleY(.82) scaleX(.95)}to{transform:scaleY(1.12) scaleX(1.05)}}
@@ -587,7 +590,7 @@ html.intro-los .ein{animation:ausDerTiefe 1.1s cubic-bezier(.16,.84,.24,1) both;
     <div class="wrap">
       <div>
         <div class="etikett ein" style="--d:420ms" data-en="Social media agency · Upper Rhine region">Social-Media-Agentur · Hochrhein</div>
-        <h1 class="ein" style="--d:520ms" data-en="We make you the <span class=&quot;bunt&quot;>best-known business</span> in your industry and <span class=&quot;ort&quot;>your region.</span>">Wir machen dich zum <span class="bunt">bekanntesten Unternehmen</span> deiner Branche und <span class="ort">deiner Region.</span></h1>
+        <h1 class="ein" style="--d:520ms" data-en="We make sure your business becomes <span class=&quot;bunt&quot;>number 1</span> in your <span class=&quot;ort&quot;>region</span> and industry.">Wir sorgen dafür, dass dein Unternehmen die <span class="bunt">Nummer 1</span> in deiner <span class="ort">Region</span> und Branche wird.</h1>
         <p class="unter ein" style="--d:640ms" data-en="Reels, TikToks and ads that bring you new customers you can plan with. From the idea to the shoot to the post, we take care of everything. You keep running your business.">Reels, TikToks und Werbeanzeigen, die dir planbar neue Kunden bringen. Von der Idee über den Dreh bis zum Posting übernehmen wir alles. Du kümmerst dich weiter um dein Geschäft.</p>
         <div class="aktionen ein" style="--d:740ms">
           <a class="knopf knopf-haupt" href="#anfrage"><span data-en="Book a free consultation">Kostenloses Beratungsgespräch vereinbaren</span> <span aria-hidden="true">→</span></a>
